@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import './index.css'; // non .js and non third party imports need the file extension
+import App from './App'; // if you're importing your own javascript or a third party library you can and SHOULD omit the .js
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

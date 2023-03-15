@@ -1,8 +1,82 @@
 
+import ExpenseItem from "./components/ExpenseItem";
+
 function App() {
   return (
-   <h1>Hello React</h1>
+    <div> 
+      <h1>Hello React</h1>
+      <p>everything here will render</p>
+      <p>even custom components! Below is the one we created</p>
+      <ExpenseItem></ExpenseItem>
+   </div>
   );
 }
 
 export default App;
+
+/*
+App is a Component! 
+it holds something trivial in this sample
+it's exported so that we can import into other files 
+
+notice: 
+- it's a function named App - note the capital letter
+- it returns html code inside of a js file
+  - this is normally not valid js code
+    - what is being returned is called JSX
+      - a special syntax created by the ReactJS team - there are transofmration steps running behind the scens that transform the code to be browser friendly (when you run npm start)
+      - stands for JavaScript XML
+      - it's how we include HTML in JavaScript files
+    *-take a look in the Sources tab in DevTools and you can see how they're transformed*
+ it looks like this: 
+// function App() {
+//   return /*#__PURE__*///(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)("h1", {
+//     children: "Hello React"
+//   }, void 0, false, {
+//     fileName: _jsxFileName,
+//     lineNumber: 4,
+//     columnNumber: 4
+//   }, this);
+// }
+
+
+
+
+
+
+
+
+/*
+
+
+N.B. 
+` export default something`
+- default is a keyword used with exports - it is the only thing being exported 
+
+ex: export default App
+import App from './App'
+OR
+import a from './App'
+import myApp from './App'
+etc
+- notice how we can provide any name or alias to the default exports
+
+`export const someVar = ...` would be used for a NAMED export and is imported differently.
+
+ex: 
+  export const createRoot = () => {...}
+  export const myVar = 'something'
+
+import { createRoot } from './path'
+import { myVar } from './path'
+- notice the difference? 
+- you can still alias the import
+
+import { myVar as v } from '.path'
+
+and if you're importing multiple exports from the same location ....
+import { createRoot, myVar } from './path'
+
+
+
+*/
