@@ -1,14 +1,61 @@
-
 import ExpenseItem from "./components/ExpenseItem";
 
 function App() {
+  // dummy expenseItem data - to mimic receiving data from 'outside' the component - simulates props
+  // can add as attributes to Components - need to pass these as parameters to functional component -> props
+  const expenses = [
+    {
+      id: "e1",
+      title: "Car Insurance",
+      amount: 90,
+      date: new Date(2023, 1, 15),
+    },
+    {
+      id: "e2",
+      title: "Groceries",
+      amount: 120,
+      date: new Date(2023, 1, 24),
+    },
+    {
+      id: "e3",
+      title: "Pet Food",
+      amount: 75,
+      date: new Date(2023, 2, 1),
+    },
+    {
+      id: "e4",
+      title: "Netflix",
+      amount: 10,
+      date: new Date(2023, 2, 15),
+    },
+  ];
+
   return (
-    <div> 
+    <div>
       <h1>Hello React</h1>
       <p>everything here will render</p>
       <p>even custom components! Below is the one we created</p>
-      <ExpenseItem></ExpenseItem>
-   </div>
+      <ExpenseItem
+        title={expenses[0].title}
+        amount={expenses[0].amount}
+        date={expenses[0].date}
+      ></ExpenseItem>
+      <ExpenseItem
+        title={expenses[1].title}
+        amount={expenses[1].amount}
+        date={expenses[1].date}
+      ></ExpenseItem>
+      <ExpenseItem
+        title={expenses[2].title}
+        amount={expenses[2].amount}
+        date={expenses[2].date}
+      ></ExpenseItem>
+      <ExpenseItem
+        title={expenses[3].title}
+        amount={expenses[3].amount}
+        date={expenses[3].date}
+      ></ExpenseItem>
+    </div>
   );
 }
 
@@ -30,7 +77,7 @@ notice:
     *-take a look in the Sources tab in DevTools and you can see how they're transformed*
  it looks like this: 
 // function App() {
-//   return /*#__PURE__*///(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)("h1", {
+//   return /*#__PURE__*/ //(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)("h1", {
 //     children: "Hello React"
 //   }, void 0, false, {
 //     fileName: _jsxFileName,
@@ -38,13 +85,6 @@ notice:
 //     columnNumber: 4
 //   }, this);
 // }
-
-
-
-
-
-
-
 
 /*
 
