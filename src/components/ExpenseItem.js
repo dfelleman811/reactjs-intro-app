@@ -8,7 +8,9 @@ import Card from "./Card";
 // keys are the attribute names defined in App.js
 function ExpenseItem(props) {
   
-
+  const clickHandler = () => {
+    console.log("Clicked!")
+  }
   // you MUST only have one root or parent element per return statement/jsx code snippet
   return (
     // use className attribute to give classes to these elements
@@ -18,6 +20,7 @@ function ExpenseItem(props) {
         <h2>{props.title}</h2>
         <div className="expense-item__price">${props.amount}</div>
       </div>
+      <button onClick={clickHandler}>Click here</button>
     </Card>
   );
 }
