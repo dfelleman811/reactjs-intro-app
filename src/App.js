@@ -1,5 +1,5 @@
 import ExpenseList from "./components/ExpenseList";
-import "./components/ExpenseList.css";
+
 function App() {
   // dummy expenseItem data - to mimic receiving data from 'outside' the component - simulates props
   // can add as attributes to Components - need to pass these as parameters to functional component -> props
