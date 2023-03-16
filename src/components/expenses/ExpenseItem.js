@@ -2,7 +2,7 @@
 import { useState } from "react";
 import "./ExpenseItem.css"; // we can style with standard css styling - just need to be aware of attribute naming that might be different in JSX
 import ExpenseDate from "./ExpenseDate";
-import Card from "./Card";
+import Card from "../ui/Card";
 // components are just functions that return html code
 // React will ensure we get one parameter - that is an object that holds all the properties. It's called 'props' - with key:value pairs
 // keys are the attribute names defined in App.js

@@ -1,4 +1,5 @@
-import ExpenseList from "./components/ExpenseList";
+import ExpenseList from "./components/expenses/ExpenseList";
+import NewExpense from "./components/new-expense/NewExpense";
 
 function App() {
   // dummy expenseItem data - to mimic receiving data from 'outside' the component - simulates props
@@ -32,7 +33,7 @@ function App() {
 
   return (
     <div>
-      <h1>Hello React</h1>
+      <NewExpense/>
       <ExpenseList expenses={expenses}/>
     </div>
   );
