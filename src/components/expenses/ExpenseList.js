@@ -5,7 +5,7 @@ import ExpenseItem from "./ExpenseItem";
 import "./ExpenseList.css";
 
 function ExpenseList(props) {
-  const [yearSelected, setYearSelected] = useState("2020");
+  const [yearSelected, setYearSelected] = useState(new Date().getFullYear());
 
   const yearSelectedHandler = (year) => {
     console.log("in ExpenseList componenet");
@@ -20,14 +20,15 @@ function ExpenseList(props) {
         onYearSelected={yearSelectedHandler}
       />
       <Card className="expenses">
-        {props.expenses.map((expense) => (
-          <ExpenseItem
+        {props.expenses.map((expense) => {
+          if (expense.date.getFullYear() == yearSelected){
+            return (<ExpenseItem
             key={expense.id}
             title={expense.title}
             amount={expense.amount}
             date={expense.date}
-          />
-        ))}
+          />)
+        }})}
       </Card>
     </div>
   );

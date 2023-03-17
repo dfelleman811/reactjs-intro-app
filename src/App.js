@@ -19,12 +19,30 @@ const DUMMY_EXPENSES = [
   },
   {
     id: "e3",
-    title: "Pet Food",
-    amount: 75,
-    date: new Date(2023, 2, 1),
+    title: "Groceries",
+    amount: 120,
+    date: new Date(2021, 2, 24),
   },
   {
     id: "e4",
+    title: "Groceries",
+    amount: 120,
+    date: new Date(2023, 3, 24),
+  },
+  {
+    id: "e5",
+    title: "Pet Food",
+    amount: 75,
+    date: new Date(2022, 2, 1),
+  },
+  {
+    id: "e6",
+    title: "Groceries",
+    amount: 120,
+    date: new Date(2022, 3, 24),
+  },
+  {
+    id: "e7",
     title: "Netflix",
     amount: 10,
     date: new Date(2023, 2, 15),
