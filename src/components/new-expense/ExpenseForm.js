@@ -13,14 +13,14 @@ const ExpenseForm = () => {
   const [enteredDate, setEnteredDate] = useState("");
 
   // can also track state as a single object
-  // const [userInput, setUserInput] = useState({
-  //   enteredTitle: "",
-  //   enteredAmount: "",
-  //   enteredDate: "",
-  // });
+  const [userInput, setUserInput] = useState({
+    enteredTitle: "",
+    enteredAmount: "",
+    enteredDate: "",
+  });
 
   const titleChangeHandler = (event) => {
-    setEnteredTitle(event.target.value);
+    //setEnteredTitle(event.target.value);
 
     // setUserInput({
     //   ...userInput,
@@ -28,36 +28,47 @@ const ExpenseForm = () => {
     // });
     // react schedules the updates - it doesn't do them immediately
     // if you're state update depends on a previous state - it's best to pass a function to the setXXX method like so
-    // setUserInput((previousState) => {
-    //   return { ...previousState, enteredTitle: event.target.value };
-    // });
+    setUserInput((previousState) => {
+      return { ...previousState, enteredTitle: event.target.value };
+    });
   };
 
   const amountChangeHandler = (event) => {
-    setEnteredAmount(event.target.value);
+    //setEnteredAmount(event.target.value);
     // setUserInput({
     //   ...userInput,
     //   enteredAmount: event.target.value,
     // });
-    // setUserInput((previousState) => {
-    //   return { ...previousState, enteredAmount: event.target.value };
-    // });
+    setUserInput((previousState) => {
+      return { ...previousState, enteredAmount: event.target.value };
+    });
   };
 
   const dateChangeHandler = (event) => {
-    setEnteredDate(event.target.value);
+    //setEnteredDate(event.target.value);
     // setUserInput({
     //   ...userInput,
     //   enteredDate: event.target.value,
     // });
-    // setUserInput((previousState) => {
-    //   return { ...previousState, enteredDate: event.target.value };
-    // });
+    setUserInput((previousState) => {
+      return { ...previousState, enteredDate: event.target.value };
+    });
   };
 
+  const submitHandler = event => {
+    // stop default form behavior
+    event.preventDefault();
+
+    // console.log({
+    //   title: enteredTitle,
+    //   amount: enteredAmount,
+    //   date: enteredDate,
+    // });
+    console.log(userInput)
+  };
   
   return (
-    <form>
+    <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
