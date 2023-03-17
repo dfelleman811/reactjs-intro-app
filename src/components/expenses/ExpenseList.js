@@ -22,6 +22,7 @@ function ExpenseList(props) {
       <Card className="expenses">
         {props.expenses.map((expense) => (
           <ExpenseItem
+            key={expense.id}
             title={expense.title}
             amount={expense.amount}
             date={expense.date}
