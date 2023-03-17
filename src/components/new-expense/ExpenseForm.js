@@ -12,25 +12,50 @@ const ExpenseForm = () => {
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
 
-  const titleChangeHandler = event => {
+  // can also track state as a single object
+  // const [userInput, setUserInput] = useState({
+  //   enteredTitle: "",
+  //   enteredAmount: "",
+  //   enteredDate: "",
+  // });
+
+  const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
+
+    // setUserInput({
+    //   ...userInput,
+    //   enteredTitle: event.target.value,
+    // });
+    // react schedules the updates - it doesn't do them immediately
+    // if you're state update depends on a previous state - it's best to pass a function to the setXXX method like so
+    // setUserInput((previousState) => {
+    //   return { ...previousState, enteredTitle: event.target.value };
+    // });
   };
 
-  const amountChangeHandler = event => {
+  const amountChangeHandler = (event) => {
     setEnteredAmount(event.target.value);
+    // setUserInput({
+    //   ...userInput,
+    //   enteredAmount: event.target.value,
+    // });
+    // setUserInput((previousState) => {
+    //   return { ...previousState, enteredAmount: event.target.value };
+    // });
   };
 
-  const dateChangeHandler = event => {
+  const dateChangeHandler = (event) => {
     setEnteredDate(event.target.value);
+    // setUserInput({
+    //   ...userInput,
+    //   enteredDate: event.target.value,
+    // });
+    // setUserInput((previousState) => {
+    //   return { ...previousState, enteredDate: event.target.value };
+    // });
   };
 
-  let newExpense = {
-    title: enteredTitle,
-    amount: enteredAmount,
-    date: enteredDate,
-  };
-
-  console.log(newExpense);
+  
   return (
     <form>
       <div className="new-expense__controls">
