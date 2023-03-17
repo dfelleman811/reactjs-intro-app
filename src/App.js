@@ -1,45 +1,53 @@
+import { useState } from "react";
 import ExpenseList from "./components/expenses/ExpenseList";
 import NewExpense from "./components/new-expense/NewExpense";
 
-function App() {
-  // dummy expenseItem data - to mimic receiving data from 'outside' the component - simulates props
-  // can add as attributes to Components - need to pass these as parameters to functional component -> props
-  const expenses = [
-    {
-      id: "e1",
-      title: "Car Insurance",
-      amount: 90,
-      date: new Date(2023, 1, 15),
-    },
-    {
-      id: "e2",
-      title: "Groceries",
-      amount: 120,
-      date: new Date(2023, 1, 24),
-    },
-    {
-      id: "e3",
-      title: "Pet Food",
-      amount: 75,
-      date: new Date(2023, 2, 1),
-    },
-    {
-      id: "e4",
-      title: "Netflix",
-      amount: 10,
-      date: new Date(2023, 2, 15),
-    },
-  ];
+// dummy expenseItem data - to mimic receiving data from 'outside' the component - simulates props
+// can add as attributes to Components - need to pass these as parameters to functional component -> props
+const DUMMY_EXPENSES = [
+  {
+    id: "e1",
+    title: "Car Insurance",
+    amount: 90,
+    date: new Date(2023, 1, 15),
+  },
+  {
+    id: "e2",
+    title: "Groceries",
+    amount: 120,
+    date: new Date(2023, 1, 24),
+  },
+  {
+    id: "e3",
+    title: "Pet Food",
+    amount: 75,
+    date: new Date(2023, 2, 1),
+  },
+  {
+    id: "e4",
+    title: "Netflix",
+    amount: 10,
+    date: new Date(2023, 2, 15),
+  },
+];
 
-  const addExpenseHandler = expense => {
-    console.log('from App.js');
+function App() {
+  const [expenses, setExpenseList] = useState(DUMMY_EXPENSES);
+
+  const addExpenseHandler = (expense) => {
+    console.log("from App.js");
     console.log(expense);
+    // expenses.push(expense);
+    // console.log(expenses);
+    setExpenseList((prevExpenses) => {
+      return [...prevExpenses, expense];
+    });
   };
 
   return (
     <div>
-      <NewExpense onAddExpense={addExpenseHandler}/>
-      <ExpenseList expenses={expenses}/>
+      <NewExpense onAddExpense={addExpenseHandler} />
+      <ExpenseList expenses={expenses} />
     </div>
   );
 }
