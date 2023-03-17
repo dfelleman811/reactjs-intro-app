@@ -20,15 +20,16 @@ function ExpenseList(props) {
         onYearSelected={yearSelectedHandler}
       />
       <Card className="expenses">
-        {props.expenses.map((expense) => {
-          if (expense.date.getFullYear() == yearSelected){
-            return (<ExpenseItem
-            key={expense.id}
-            title={expense.title}
-            amount={expense.amount}
-            date={expense.date}
-          />)
-        }})}
+        {props.expenses
+          .filter((e) => e.date.getFullYear() === yearSelected)
+          .map((expense) => (
+            <ExpenseItem
+              key={expense.id}
+              title={expense.title}
+              amount={expense.amount}
+              date={expense.date}
+            />
+          ))}
       </Card>
     </div>
   );
