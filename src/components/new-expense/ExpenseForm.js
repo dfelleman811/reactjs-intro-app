@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./ExpenseForm.css";
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
   // we can use state to store user input
   // for the title - it starts as an empty string
   // and the handler for any change to the input will set the new input and update the state
@@ -64,9 +64,9 @@ const ExpenseForm = () => {
       amount: enteredAmount,
       date: new Date(enteredDate),
     }
-    console.log(expenseData);
+    // console.log(expenseData);
     // console.log(userInput)
-
+    props.onSaveExpense(expenseData);
     // reset form
     setEnteredTitle('');
     setEnteredAmount('');
