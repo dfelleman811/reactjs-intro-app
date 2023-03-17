@@ -6,16 +6,17 @@ import "./ExpenseList.css";
 
 function ExpenseList(props) {
 
-  const [yearSelected, setYearSelected] = useState('');
+  const [yearSelected, setYearSelected] = useState('2020');
 
   const yearSelectedHandler = year => {
     console.log("in ExpenseList componenet")
     console.log(year);
+    setYearSelected(year);
   };
 
   return (
     <div>
-      <ExpenseFilter onYearSelected={yearSelectedHandler}/>
+      <ExpenseFilter selectedYear={yearSelected} onYearSelected={yearSelectedHandler}/>
       <Card className="expenses">
         <ExpenseItem
           title={props.expenses[0].title}

@@ -1,15 +1,17 @@
 const ExpenseFilter = (props) => {
   const selectionChangedHandler = (event) => {
-    const index = event.target.options.selectedIndex;
-    const year = event.target.options[index].value;
-    props.onYearSelected(year)
+    // console.log("from the expense filter")
+    // console.log(event.target.value)
+    // const index = event.target.options.selectedIndex;
+    // const year = event.target.options[index].value;
+    props.onYearSelected(event.target.value)
   };
 
   return (
     <div>
       <div>
         <label>Filter by Year</label>
-        <select onChange={selectionChangedHandler}>
+        <select value={props.selectedYear} onChange={selectionChangedHandler}>
           <option value="2020">2020</option>
           <option value="2021">2021</option>
           <option value="2022">2022</option>
