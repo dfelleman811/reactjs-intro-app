@@ -1,3 +1,5 @@
+import './ExpenseFilter.css';
+
 const ExpenseFilter = (props) => {
   const selectionChangedHandler = (event) => {
     // console.log("from the expense filter")
@@ -8,8 +10,8 @@ const ExpenseFilter = (props) => {
   };
 
   return (
-    <div>
-      <div>
+    <div className="expenses-filter">
+      <div className="expenses-filter__control">
         <label>Filter by Year</label>
         <select value={props.selectedYear} onChange={selectionChangedHandler}>
           <option value="2020">2020</option>

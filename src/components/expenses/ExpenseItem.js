@@ -6,17 +6,18 @@ import Card from "../ui/Card";
 // React will ensure we get one parameter - that is an object that holds all the properties. It's called 'props' - with key:value pairs
 // keys are the attribute names defined in App.js
 function ExpenseItem(props) {
-
   // you MUST only have one root or parent element per return statement/jsx code snippet
   return (
     // use className attribute to give classes to these elements
-    <Card className="expense-item">
-      <ExpenseDate date={props.date} />
-      <div className="expense-item__description">
-        <h2>{props.title}</h2>
-        <div className="expense-item__price">${props.amount}</div>
-      </div>
-    </Card>
+    <li>
+      <Card className="expense-item">
+        <ExpenseDate date={props.date} />
+        <div className="expense-item__description">
+          <h2>{props.title}</h2>
+          <div className="expense-item__price">${props.amount}</div>
+        </div>
+      </Card>
+    </li>
   );
 }
 // need to export it in order to use it

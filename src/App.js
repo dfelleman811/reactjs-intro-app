@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ExpenseList from "./components/expenses/ExpenseList";
+import Expenses from "./components/expenses/Expenses";
 import NewExpense from "./components/new-expense/NewExpense";
 
 // dummy expenseItem data - to mimic receiving data from 'outside' the component - simulates props
@@ -65,7 +65,7 @@ function App() {
   return (
     <div>
       <NewExpense onAddExpense={addExpenseHandler} />
-      <ExpenseList expenses={expenses} />
+      <Expenses expenses={expenses} />
     </div>
   );
 }
